@@ -1,0 +1,133 @@
+EVA3_4_FUNCIONES
+MySQL Shell 8.0.38
+
+Copyright (c) 2016, 2024, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+Type '\help' or '\?' for help; '\quit' to exit.
+ MySQL  JS > \sql
+Switching to SQL mode... Commands end with ;
+ MySQL  SQL > \connect -mc root@localhost
+WARNING: The -mc option was deprecated, please use --mc instead. (Option has been processed as --mc).
+Creating a Classic session to 'root@localhost'
+Fetching global names for auto-completion... Press ^C to stop.
+Your MySQL connection id is 11
+Server version: 8.0.39 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+ MySQL  localhost:3306 ssl  SQL > use empresa;
+Default schema set to `empresa`.
+Fetching global names, object names from `empresa` for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  empresa  SQL > SELECT a.employee_id, a.first_name, a.last_name, b.department_name, generar_correo(a.first_name, a.last_name, b.department_name) FROM employees a INNER JOIN departments b ON a.department_id = b.department_id;
++-------------+-------------+-------------+------------------+--------------------------------------------------------------+
+| employee_id | first_name  | last_name   | department_name  | generar_correo(a.first_name, a.last_name, b.department_name) |
++-------------+-------------+-------------+------------------+--------------------------------------------------------------+
+|         200 | Jennifer    | Whalen      | Administration   | Jennifer.Whalen@Administration.com                           |
+|         201 | Michael     | Hartstein   | Marketing        | Michael.Hartstein@Marketing.com                              |
+|         202 | Pat         | Fay         | Marketing        | Pat.Fay@Marketing.com                                        |
+|         114 | Den         | Raphaely    | Purchasing       | Den.Raphaely@Purchasing.com                                  |
+|         115 | Alexander   | Khoo        | Purchasing       | Alexander.Khoo@Purchasing.com                                |
+|         116 | Shelli      | Baida       | Purchasing       | Shelli.Baida@Purchasing.com                                  |
+|         117 | Sigal       | Tobias      | Purchasing       | Sigal.Tobias@Purchasing.com                                  |
+|         118 | Guy         | Himuro      | Purchasing       | Guy.Himuro@Purchasing.com                                    |
+|         119 | Karen       | Colmenares  | Purchasing       | Karen.Colmenares@Purchasing.com                              |
+|         203 | Susan       | Mavris      | Human Resources  | Susan.Mavris@Human Resources.com                             |
+|         120 | Matthew     | Weiss       | Shipping         | Matthew.Weiss@Shipping.com                                   |
+|         121 | Adam        | Fripp       | Shipping         | Adam.Fripp@Shipping.com                                      |
+|         122 | Payam       | Kaufling    | Shipping         | Payam.Kaufling@Shipping.com                                  |
+|         123 | Shanta      | Vollman     | Shipping         | Shanta.Vollman@Shipping.com                                  |
+|         124 | Kevin       | Mourgos     | Shipping         | Kevin.Mourgos@Shipping.com                                   |
+|         125 | Julia       | Nayer       | Shipping         | Julia.Nayer@Shipping.com                                     |
+|         126 | Irene       | Mikkilineni | Shipping         | Irene.Mikkilineni@Shipping.com                               |
+|         127 | James       | Landry      | Shipping         | James.Landry@Shipping.com                                    |
+|         128 | Steven      | Markle      | Shipping         | Steven.Markle@Shipping.com                                   |
+|         129 | Laura       | Bissot      | Shipping         | Laura.Bissot@Shipping.com                                    |
+|         130 | Mozhe       | Atkinson    | Shipping         | Mozhe.Atkinson@Shipping.com                                  |
+|         131 | James       | Marlow      | Shipping         | James.Marlow@Shipping.com                                    |
+|         132 | TJ          | Olson       | Shipping         | TJ.Olson@Shipping.com                                        |
+|         133 | Jason       | Mallin      | Shipping         | Jason.Mallin@Shipping.com                                    |
+|         134 | Michael     | Rogers      | Shipping         | Michael.Rogers@Shipping.com                                  |
+|         135 | Ki          | Gee         | Shipping         | Ki.Gee@Shipping.com                                          |
+|         136 | Hazel       | Philtanker  | Shipping         | Hazel.Philtanker@Shipping.com                                |
+|         137 | Renske      | Ladwig      | Shipping         | Renske.Ladwig@Shipping.com                                   |
+|         138 | Stephen     | Stiles      | Shipping         | Stephen.Stiles@Shipping.com                                  |
+|         139 | John        | Seo         | Shipping         | John.Seo@Shipping.com                                        |
+|         140 | Joshua      | Patel       | Shipping         | Joshua.Patel@Shipping.com                                    |
+|         141 | Trenna      | Rajs        | Shipping         | Trenna.Rajs@Shipping.com                                     |
+|         142 | Curtis      | Davies      | Shipping         | Curtis.Davies@Shipping.com                                   |
+|         143 | Randall     | Matos       | Shipping         | Randall.Matos@Shipping.com                                   |
+|         144 | Peter       | Vargas      | Shipping         | Peter.Vargas@Shipping.com                                    |
+|         180 | Winston     | Taylor      | Shipping         | Winston.Taylor@Shipping.com                                  |
+|         181 | Jean        | Fleaur      | Shipping         | Jean.Fleaur@Shipping.com                                     |
+|         182 | Martha      | Sullivan    | Shipping         | Martha.Sullivan@Shipping.com                                 |
+|         183 | Girard      | Geoni       | Shipping         | Girard.Geoni@Shipping.com                                    |
+|         184 | Nandita     | Sarchand    | Shipping         | Nandita.Sarchand@Shipping.com                                |
+|         185 | Alexis      | Bull        | Shipping         | Alexis.Bull@Shipping.com                                     |
+|         186 | Julia       | Dellinger   | Shipping         | Julia.Dellinger@Shipping.com                                 |
+|         187 | Anthony     | Cabrio      | Shipping         | Anthony.Cabrio@Shipping.com                                  |
+|         188 | Kelly       | Chung       | Shipping         | Kelly.Chung@Shipping.com                                     |
+|         189 | Jennifer    | Dilly       | Shipping         | Jennifer.Dilly@Shipping.com                                  |
+|         190 | Timothy     | Gates       | Shipping         | Timothy.Gates@Shipping.com                                   |
+|         191 | Randall     | Perkins     | Shipping         | Randall.Perkins@Shipping.com                                 |
+|         192 | Sarah       | Bell        | Shipping         | Sarah.Bell@Shipping.com                                      |
+|         193 | Britney     | Everett     | Shipping         | Britney.Everett@Shipping.com                                 |
+|         194 | Samuel      | McCain      | Shipping         | Samuel.McCain@Shipping.com                                   |
+|         195 | Vance       | Jones       | Shipping         | Vance.Jones@Shipping.com                                     |
+|         196 | Alana       | Walsh       | Shipping         | Alana.Walsh@Shipping.com                                     |
+|         197 | Kevin       | Feeney      | Shipping         | Kevin.Feeney@Shipping.com                                    |
+|         198 | Donald      | OConnell    | Shipping         | Donald.OConnell@Shipping.com                                 |
+|         199 | Douglas     | Grant       | Shipping         | Douglas.Grant@Shipping.com                                   |
+|         103 | Alexander   | Hunold      | IT               | Alexander.Hunold@IT.com                                      |
+|         104 | Bruce       | Ernst       | IT               | Bruce.Ernst@IT.com                                           |
+|         105 | David       | Austin      | IT               | David.Austin@IT.com                                          |
+|         106 | Valli       | Pataballa   | IT               | Valli.Pataballa@IT.com                                       |
+|         107 | Diana       | Lorentz     | IT               | Diana.Lorentz@IT.com                                         |
+|         204 | Hermann     | Baer        | Public Relations | Hermann.Baer@Public Relations.com                            |
+|         145 | John        | Russell     | Sales            | John.Russell@Sales.com                                       |
+|         146 | Karen       | Partners    | Sales            | Karen.Partners@Sales.com                                     |
+|         147 | Alberto     | Errazuriz   | Sales            | Alberto.Errazuriz@Sales.com                                  |
+|         148 | Gerald      | Cambrault   | Sales            | Gerald.Cambrault@Sales.com                                   |
+|         149 | Eleni       | Zlotkey     | Sales            | Eleni.Zlotkey@Sales.com                                      |
+|         150 | Peter       | Tucker      | Sales            | Peter.Tucker@Sales.com                                       |
+|         151 | David       | Bernstein   | Sales            | David.Bernstein@Sales.com                                    |
+|         152 | Peter       | Hall        | Sales            | Peter.Hall@Sales.com                                         |
+|         153 | Christopher | Olsen       | Sales            | Christopher.Olsen@Sales.com                                  |
+|         154 | Nanette     | Cambrault   | Sales            | Nanette.Cambrault@Sales.com                                  |
+|         155 | Oliver      | Tuvault     | Sales            | Oliver.Tuvault@Sales.com                                     |
+|         156 | Janette     | King        | Sales            | Janette.King@Sales.com                                       |
+|         157 | Patrick     | Sully       | Sales            | Patrick.Sully@Sales.com                                      |
+|         158 | Allan       | McEwen      | Sales            | Allan.McEwen@Sales.com                                       |
+|         159 | Lindsey     | Smith       | Sales            | Lindsey.Smith@Sales.com                                      |
+|         160 | Louise      | Doran       | Sales            | Louise.Doran@Sales.com                                       |
+|         161 | Sarath      | Sewall      | Sales            | Sarath.Sewall@Sales.com                                      |
+|         162 | Clara       | Vishney     | Sales            | Clara.Vishney@Sales.com                                      |
+|         163 | Danielle    | Greene      | Sales            | Danielle.Greene@Sales.com                                    |
+|         164 | Mattea      | Marvins     | Sales            | Mattea.Marvins@Sales.com                                     |
+|         165 | David       | Lee         | Sales            | David.Lee@Sales.com                                          |
+|         166 | Sundar      | Ande        | Sales            | Sundar.Ande@Sales.com                                        |
+|         167 | Amit        | Banda       | Sales            | Amit.Banda@Sales.com                                         |
+|         168 | Lisa        | Ozer        | Sales            | Lisa.Ozer@Sales.com                                          |
+|         169 | Harrison    | Bloom       | Sales            | Harrison.Bloom@Sales.com                                     |
+|         170 | Tayler      | Fox         | Sales            | Tayler.Fox@Sales.com                                         |
+|         171 | William     | Smith       | Sales            | William.Smith@Sales.com                                      |
+|         172 | Elizabeth   | Bates       | Sales            | Elizabeth.Bates@Sales.com                                    |
+|         173 | Sundita     | Kumar       | Sales            | Sundita.Kumar@Sales.com                                      |
+|         174 | Ellen       | Abel        | Sales            | Ellen.Abel@Sales.com                                         |
+|         175 | Alyssa      | Hutton      | Sales            | Alyssa.Hutton@Sales.com                                      |
+|         176 | Jonathon    | Taylor      | Sales            | Jonathon.Taylor@Sales.com                                    |
+|         177 | Jack        | Livingston  | Sales            | Jack.Livingston@Sales.com                                    |
+|         179 | Charles     | Johnson     | Sales            | Charles.Johnson@Sales.com                                    |
+|         100 | Steven      | King        | Executive        | Steven.King@Executive.com                                    |
+|         101 | Neena       | Kochhar     | Executive        | Neena.Kochhar@Executive.com                                  |
+|         102 | Lex         | De Haan     | Executive        | Lex.De Haan@Executive.com                                    |
+|         108 | Nancy       | Greenberg   | Finance          | Nancy.Greenberg@Finance.com                                  |
+|         109 | Daniel      | Faviet      | Finance          | Daniel.Faviet@Finance.com                                    |
+|         110 | John        | Chen        | Finance          | John.Chen@Finance.com                                        |
+|         111 | Ismael      | Sciarra     | Finance          | Ismael.Sciarra@Finance.com                                   |
+|         112 | Jose Manuel | Urman       | Finance          | Jose Manuel.Urman@Finance.com                                |
+|         113 | Luis        | Popp        | Finance          | Luis.Popp@Finance.com                                        |
+|         205 | Shelley     | Higgins     | Accounting       | Shelley.Higgins@Accounting.com                               |
+|         206 | William     | Gietz       | Accounting       | William.Gietz@Accounting.com                                 |
++-------------+-------------+-------------+------------------+--------------------------------------------------------------+
+106 rows in set (0.0222 sec)
+ MySQL  localhost:3306 ssl  empresa  SQL >
